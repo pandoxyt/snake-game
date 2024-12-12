@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/p5.js" integrity="sha512-U9A2hkdqQwJaC2PgtQYCAZl6OkYhJOvF86X9ibqKw1bsYnn3txJAyeRQzYwSD0qRgBUzKXdhzGUGIYzuoh4JEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="loading-screen">
+        <div class="loading-text">Loading...</div>
+        <div class="loading-bar"></div>
+    </div>
+
+    <div id="game-over" style="display: none;">
+        <h1>GAME OVER</h1>
+        <p>Final Score: <span id="final-score">0</span></p>
+        <button onclick="restartGame()">Restart</button>
+    </div>
+    
+
+    <div>
+        <div id="score-display">Score: <span id="score">0</span></div>
+        <div id="best-score-display">Best Score: <span id="best-score">0</span></div>
+    </div>
+
+    <div class="menu-container" id="options-container">
+        <div class="switch-container">
+          <label for="ObstacleSwitch">Obstacles</label>
+          <input type="checkbox" id="ObstacleSwitch" checked>
+          <label for="ObstacleSwitch" class="lbl"></label>
+        </div>
+    
+        <div class="switch-container">
+          <label for="EnemySwitch">Enemy</label>
+          <input type="checkbox" id="EnemySwitch" checked>
+          <label for="EnemySwitch" class="lbl"></label>
+        </div>
+
+        <p>NOTE: The changes will take effect after a reload.</p>
+
+        <img id="randomImage" alt="Random Image">
+    </div>
+
+    <div id="instructions-container">
+        <h2>How to Play</h2>
+        <ul>
+            <li><strong>Controls:</strong> Control the snake’s direction with WASD.</li>
+            <li><strong>Eat food:</strong> Grow the snake and score points.</li>
+            <li><strong>Avoid obstacles:</strong> Don’t crash into obstacles or the walls.</li>
+            <li><strong>Enemy Snake:</strong> Avoid the enemy snake as it competes for food, you can kill him, but only if you are longer</li>
+            <li><strong>Speed Boost:</strong> Press the B key for a temporary speed boost for 15 seconds, <strong>Attention!</strong> the speed boost effect the enemy too.</li>
+            <li><strong>Game Over:</strong> The game ends when you hit an obstacle or the enemy snake.</li>
+        </ul>
+    </div>
+
+    <script src="js/utilities.js"></script>
+
+    <script src="js/obstacles.js" type="text/JavaScript" defer></script>
+    <script src="js/snake.js" type="text/JavaScript" defer></script>
+    <script src="js/enemy.js" type="text/JavaScript" defer></script>
+    <script src="js/food.js" type="text/JavaScript" defer></script>
+    <script src="js/main.js" type="text/JavaScript" defer></script>
+</body>
+
+</html>

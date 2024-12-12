@@ -1,0 +1,50 @@
+/* Loading Screen styles */
+#loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(18, 18, 18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Press Start 2P', cursive;
+    overflow: hidden;
+}
+
+.loading-text {
+    font-size: 3em;
+    color: rgb(0, 255, 255);
+    text-align: center;
+    text-shadow: 0 0 5px rgb(0, 255, 255), 0 0 15px rgb(0, 255, 255), 0 0 30px rgb(0, 255, 255);
+    animation: blink 1.5s infinite alternate;
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.8), rgba(255, 0, 255, 0.8));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Loading Bar */
+.loading-bar {
+    margin-top: 20px;
+    width: 80%;
+    height: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    border: 3px solid rgb(0, 255, 255);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px 2px rgb(0, 255, 255);
+}
+
+.loading-bar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: rgb(0, 255, 255);
+    animation: loading 4s ease-in-out infinite;
+}
